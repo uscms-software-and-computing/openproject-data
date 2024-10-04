@@ -18,7 +18,7 @@ jobs:
         uses: JamesIves/fetch-api-data-action@v2
         with:
           # endpoint: https://example.com
-          endpoint: "https://uscms-openproject.k8s.accre.vanderbilt.edu/api/v3/work_packages?filters=[{\"type\": {\"operator\": \"=\", \"values\": [\"3\"]}}, {\"project\": {\"operator\": \"=\", \"values\": [\"4\",\"5\",\"35\",\"6\",\"8\"]}}]&pageSize=1000"
+          endpoint: "https://uscms-openproject.k8s.accre.vanderbilt.edu/api/v3/work_packages?filters=[{\"project\": {\"operator\": \"=\", \"values\": [\"4\",\"5\",\"35\",\"6\",\"8\"]}}]&pageSize=1000"
           # configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.API_TOKEN }}"} }'
           configuration: '{ "method": "GET", "headers": {"Authorization": "Basic ${{ secrets.API_TOKEN }}"} }'
           set-output: false
