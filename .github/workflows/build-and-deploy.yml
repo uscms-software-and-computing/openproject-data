@@ -1,5 +1,6 @@
 name: Build and Deploy
 on:
+  push:
   schedule:
     - cron: 10 15 * * 0-6
 permissions:
