@@ -32,6 +32,46 @@ jobs:
           configuration: '{ "method": "GET", "headers": {"Authorization": "Basic ${{ secrets.API_TOKEN }}"} }'
           set-output: false
           save-name: s-c
+        
+      - name: Fetch API Data (WBS1)📦
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          # endpoint: https://example.com
+          endpoint: "https://uscms-openproject.k8s.accre.vanderbilt.edu/api/v3/work_packages?filters=[{\"project\": {\"operator\": \"=\", \"values\": [\"5\"]}}]&pageSize=1000"
+          # configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.API_TOKEN }}"} }'
+          configuration: '{ "method": "GET", "headers": {"Authorization": "Basic ${{ secrets.API_TOKEN }}"} }'
+          set-output: false
+          save-name:  wbs1
+      
+      - name: Fetch API Data (WBS2)📦
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          # endpoint: https://example.com
+          endpoint: "https://uscms-openproject.k8s.accre.vanderbilt.edu/api/v3/work_packages?filters=[{\"project\": {\"operator\": \"=\", \"values\": [\"35\"]}}]&pageSize=1000"
+          # configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.API_TOKEN }}"} }'
+          configuration: '{ "method": "GET", "headers": {"Authorization": "Basic ${{ secrets.API_TOKEN }}"} }'
+          set-output: false
+          save-name: wbs2
+        
+      - name: Fetch API Data (WBS3)📦
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          # endpoint: https://example.com
+          endpoint: "https://uscms-openproject.k8s.accre.vanderbilt.edu/api/v3/work_packages?filters=[{\"project\": {\"operator\": \"=\", \"values\": [\"6\"]}}]&pageSize=1000"
+          # configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.API_TOKEN }}"} }'
+          configuration: '{ "method": "GET", "headers": {"Authorization": "Basic ${{ secrets.API_TOKEN }}"} }'
+          set-output: false
+          save-name: wbs3
+
+      - name: Fetch API Data (WBS4)📦
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          # endpoint: https://example.com
+          endpoint: "https://uscms-openproject.k8s.accre.vanderbilt.edu/api/v3/work_packages?filters=[{\"project\": {\"operator\": \"=\", \"values\": [\"8\"]}}]&pageSize=1000"
+          # configuration: '{ "method": "GET", "headers": {"Authorization": "Bearer ${{ secrets.API_TOKEN }}"} }'
+          configuration: '{ "method": "GET", "headers": {"Authorization": "Basic ${{ secrets.API_TOKEN }}"} }'
+          set-output: false
+          save-name: wbs4
 
       - name: Build and Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
